@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+  margin: 50px;
+}
+input, .row {
+  margin-bottom: 10px;
+}
+
+.right {
+  float: right;
+}
+
+.card-body {
+  padding-bottom: 0px;
+}
