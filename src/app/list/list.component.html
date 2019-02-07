@@ -1,0 +1,8 @@
+<ul class="list-group">
+  <li class="list-group-item" style="width: 100%"
+      *ngFor="let contact of service.contacts; let i = index"
+      (click)="service.showContact(i, contact)"
+  >{{contact.name}}
+    <button class="btn btn-danger right" (click)="service.removeContact(i)">Delete</button>
+  </li>
+</ul>

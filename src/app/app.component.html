@@ -1,26 +1,13 @@
 
 <div class="row">
-  <app-form class="col-3" (newContactEvent)="addContact($event)"></app-form>
-  <div class="col-3" *ngIf="currContact != null">
-    <div class="card">
-      <div class="card-body">
-        <p>{{currContact.name}}</p>
-        <p>{{currContact.email}}</p>
-        <p>{{currContact.phone}}</p>
-        <p>{{currContact.address}}</p>
-      </div>
-    </div>
+  <app-form class="col-3"></app-form>
+  <div class="col-3" *ngIf="getCurrContact() != null">
+    <app-card *ngIf="!service.isEdited; else edit" ></app-card>
+    <ng-template #edit>
+      <app-form></app-form>
+    </ng-template>
   </div>
 </div>
 <div class="row">
-  <div class="col-6">
-    <ul class="list-group">
-      <li class="list-group-item" style="width: 100%"
-          *ngFor="let contact of contacts; let i = index"
-          (click)="showContact(i, contact)"
-      >{{contact.name}}
-        <button class="btn btn-danger right" (click)="removeContact(i)">Delete</button>
-      </li>
-    </ul>
-  </div>
+  <app-list class="col-6"></app-list>
 </div>

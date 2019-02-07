@@ -1,5 +1,9 @@
-  <input class="form-control" type="text" placeholder="Name" [(ngModel)]="currName">
-  <input class="form-control" type="text" placeholder="Email" [(ngModel)]="currEmail">
-  <input class="form-control" type="text" placeholder="Phone" [(ngModel)]="currPhone">
-  <input class="form-control" type="text" placeholder="Address" [(ngModel)]="currAddress">
-  <button type="button" class="btn btn-primary right" (click)="addContact()">Add</button>
+<div class="card">
+  <div class="card-body">
+    <p>{{service.currContact.name}}</p>
+    <p>{{service.currContact.phone}}</p>
+    <p>{{service.currContact.email}}</p>
+    <p>{{service.currContact.address}}</p>
+  </div>
+</div>
+<button class="btn btn-success right" (click)="service.isEdited = true">Edit</button>
